@@ -1,0 +1,35 @@
+{
+  "duplicate_histories": 0,
+  "degenerate_duplicate_histories": 0,
+  "duplicate_complete_series": 0,
+  "grouping": "informative exact histories, exact complete series, verified same-length normalized RMS <=0.01 candidates",
+  "group_size_distribution": {
+    "count": 10000,
+    "valid": 10000,
+    "nonfinite": 0,
+    "min": 1.0,
+    "p1": 1.0,
+    "p5": 1.0,
+    "p25": 1.0,
+    "median": 1.0,
+    "p75": 1.0,
+    "p95": 1.0,
+    "p99": 1.0,
+    "max": 1.0,
+    "mean": 1.0
+  },
+  "group_count": 10000,
+  "near_candidates": 12064,
+  "near_comparisons": 2000,
+  "near_cap": 2000,
+  "verified_near_pairs": 0,
+  "repeated_block_matches": 0,
+  "repeated_block_pairs": 0,
+  "unresolved_repeated_block_pairs": 0,
+  "limitations": [
+    "Approximate search is not exhaustive; same-length histories only.",
+    "At most 16 aligned 128-point blocks per history; shifted overlaps may be missed.",
+    "Near grouping is conservative shape similarity, not established provenance.",
+    "Degenerate identical histories alone are not grouped; full-series duplicates are."
+  ]
+}

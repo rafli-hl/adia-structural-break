@@ -1,0 +1,42 @@
+{
+  "scope": "Synthetic verification only; no competition data analyzed",
+  "test_command": "python -m unittest discover -s tests -v",
+  "tests_run": 19,
+  "failures": 0,
+  "errors": 0,
+  "test_wall_seconds": 3.321,
+  "ewma_reference": "Independent transcription of the executable quickstarter semantics supplied by the user; notebook was not separately downloaded",
+  "ewma_comparison": {
+    "relative_tolerance": 2e-14,
+    "absolute_tolerance": 2e-14,
+    "synthetic_cases": 8,
+    "observation_by_observation": true
+  },
+  "e00": {
+    "constant": 0.5,
+    "age_only": 0.5,
+    "perfect_oracle": 1.0,
+    "reversed_oracle": 0.0,
+    "no_eligible_age": 0.5
+  },
+  "checks": [
+    "official scorer equivalence with ties and unequal lengths",
+    "hand-calculated pair weighting",
+    "invalid scores and incomplete coverage",
+    "prefix invariance",
+    "truncation invariance",
+    "series-order invariance",
+    "repeat determinism",
+    "lookahead/materialization rejection",
+    "handshake and missing/extra/skipped output rejection",
+    "unchanged constant histories",
+    "long-form interleaved parquet and shuffled label join",
+    "five fixed group folds",
+    "complete synthetic OOF output for all seven E01 detectors",
+    "one-based tau alignment detection",
+    "noncumulative-label rejection",
+    "historical AR diagnostic sanity"
+  ],
+  "competition_oof_ts_auc": null,
+  "competition_runtime": null
+}

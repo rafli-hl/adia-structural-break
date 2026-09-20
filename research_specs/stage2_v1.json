@@ -1,0 +1,190 @@
+{
+  "version": "astra_stage2_v1",
+  "phase1_ids": [
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07"
+  ],
+  "windows": [
+    32,
+    128,
+    256,
+    "cumulative"
+  ],
+  "historical_split": 0.7,
+  "partial_windows": true,
+  "evidence": {
+    "formula": "q=sqrt(n)*abs(mean-reference_mean)/max(reference_sample_sd,1e-8); score=q/(1+q)",
+    "scale_floor": 1e-8,
+    "ddof": 1
+  },
+  "ar": {
+    "order": 5,
+    "ridge": 1,
+    "penalize_intercept": false,
+    "fit": "first floor(0.7*H)",
+    "reference": "remaining H",
+    "refit": false,
+    "lags": "actual observations"
+  },
+  "rank": {
+    "formula": "(#less+0.5*#equal+0.5)/(M+1)",
+    "transforms": [
+      "v=2*u-1",
+      "v*v"
+    ],
+    "reference": "frozen innovation CDF on C"
+  },
+  "dependence": {
+    "sign": "sign(e-median(e_C)); sign(0)=0",
+    "lag": 1,
+    "windows": [
+      128,
+      256
+    ],
+    "reference": "one Pearson correlation over full C",
+    "minimum_pairs": 8,
+    "centered_ss_floor": 1e-12,
+    "formula": "sqrt(m)*abs(rho-rho_C); q/(1+q)",
+    "boundary_pairs": false
+  },
+  "cv": {
+    "version": "cv2",
+    "seed": 20260919,
+    "n_splits": 5,
+    "splitter": "StratifiedKFold",
+    "strata": [
+      "no_break",
+      "break_1_64",
+      "break_65_128",
+      "break_129_256",
+      "break_257_512",
+      "break_513_plus"
+    ]
+  },
+  "gate": {
+    "minimum_pooled_delta": 0.002,
+    "minimum_positive_folds": 4,
+    "minimum_age_ge129_delta": 0,
+    "minimum_age_le64_delta": -0.005,
+    "minimum_age_le64_vs_e01_delta": -0.005,
+    "bootstrap_replicates": 999,
+    "bootstrap_seed": 20260920,
+    "bootstrap_interval": [
+      0.025,
+      0.975
+    ],
+    "bootstrap_lower_strictly_positive": true,
+    "bootstrap_scope": "fixed OOF predictions; whole-series resampling within six CV strata; recompute pair weights"
+  },
+  "experiments": {
+    "E02": {
+      "parent": "E01_squared",
+      "dependencies": [],
+      "features": 4,
+      "blocks": [
+        "R"
+      ],
+      "score": "mean(four raw energy statistics)",
+      "reference": "full H"
+    },
+    "E03": {
+      "parent": "E02",
+      "dependencies": [
+        "E02"
+      ],
+      "features": 4,
+      "blocks": [
+        "R"
+      ],
+      "score": "mean(four raw energy statistics)",
+      "reference": "C",
+      "control_artifact": true
+    },
+    "E04": {
+      "parent": "E03",
+      "dependencies": [
+        "E03"
+      ],
+      "features": 4,
+      "blocks": [
+        "I"
+      ],
+      "score": "mean(four innovation energy statistics)",
+      "reference": "innovations on C",
+      "additional_comparisons": [
+        "E02",
+        "E01_squared"
+      ]
+    },
+    "E05": {
+      "parent": "E03",
+      "dependencies": [
+        "E03",
+        "E04"
+      ],
+      "features": 8,
+      "blocks": [
+        "R",
+        "I"
+      ],
+      "score": "(R+I)/2",
+      "mandatory_comparisons": [
+        "E04"
+      ]
+    },
+    "E06": {
+      "parent": "E05",
+      "dependencies": [
+        "E05"
+      ],
+      "features": 16,
+      "blocks": [
+        "R",
+        "I",
+        "P"
+      ],
+      "score": "(R+I+P)/3",
+      "P": "mean(eight rank statistics)"
+    },
+    "E07": {
+      "parent": "E06",
+      "dependencies": [
+        "E06"
+      ],
+      "features": 18,
+      "blocks": [
+        "R",
+        "I",
+        "P",
+        "D"
+      ],
+      "score": "(R+I+P+D)/4",
+      "D": "mean(two dependence statistics)"
+    }
+  },
+  "E08_frozen_not_executable": {
+    "parent": "E07",
+    "inputs": [
+      "R",
+      "I",
+      "P",
+      "D"
+    ],
+    "age_input": false,
+    "context": false,
+    "weight": "W_t/(2*Z*N_y(t)); training folds only; omit W_t=0",
+    "standardization": "weighted training mean and population variance; constant input -> 0",
+    "objective": "normalized weighted logistic loss + 0.01/2 * ||beta||^2",
+    "intercept_penalized": false,
+    "precision": "float64",
+    "initialization": "zero",
+    "solver": "deterministic L-BFGS",
+    "max_iterations": 1000,
+    "gradient_inf_max": 0.000001,
+    "tuning": false
+  }
+}

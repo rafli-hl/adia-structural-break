@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "noncumulative_series": 0,
+    "break_without_positive": 0,
+    "unmatched_break_series": 0,
+    "ambiguous_shift_matches": 29,
+    "no_break_nonzero_labels": 0
+  },
+  "shifted_identity_matches": {
+    "0": 4967,
+    "-1": 29
+  },
+  "first_positive_minus_tau_counts": {
+    "0": 4967
+  },
+  "consistent_offset": true,
+  "status": "pass"
+}

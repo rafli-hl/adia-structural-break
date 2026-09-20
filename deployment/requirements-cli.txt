@@ -1,0 +1,4 @@
+# Separate local tooling environment. Not part of the submission package.
+-r ../requirements.txt
+threadpoolctl==3.7.0
+crunch-cli==12.0.3

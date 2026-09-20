@@ -1,0 +1,10 @@
+{
+  "scope": "synthetic metric controls only",
+  "scores": {
+    "constant": 0.5,
+    "age_only": 0.5,
+    "perfect_oracle": 1.0,
+    "reversed_oracle": 0.0
+  },
+  "no_eligible_age_fallback": 0.5
+}

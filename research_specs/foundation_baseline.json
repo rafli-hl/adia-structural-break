@@ -1,0 +1,90 @@
+{
+  "files": {
+    "sbrt/metric.py": "3b3f718425ed26163ffcd7481b931f2057523737310276b0f738fe8d179c1722",
+    "sbrt/detectors.py": "270dd2da5d08c6331b6dd40f0c922732a88755e821c15f254d919883d36db1ec",
+    "sbrt/profile.py": "bd61c8fe32215a7ffa79c2dfea26b5500bc493759f1753ac32c45aff3dcac762",
+    "sbrt/replay.py": "629bd4ab03e4f0b532e8f4134d4a6deffaad0de7dcfb7bd7b73da9e6f9f4c113",
+    "sbrt/backtest.py": "b049a6680a7c04e2ec015ccb253d43abb7e9c2454e438dd2bec6dee78bae2d05",
+    "sbrt/data.py": "c73f5655ec023464d3b6e2c22ec06ae5dd2e46dd8fe653cc95c3cfebd31d645c",
+    "sbrt/cli.py": "c69b7fc85df43a05922315295e25a4b7cff989f169e7339435844438222ed3c9",
+    "tests/test_foundation.py": "d38e0f2991233fd219ad9a04442523805cf58d101b419f81746b041a20e2502d",
+    "local_cache/folds.parquet": "cbf171ac0501b778300de591831326156818890d29fd8f8e3be5d10db95416c2",
+    "local_cache/fold_settings.json": "6bc8a94e20e89c2dfce6164b3915b0491f9337cd1dcd56159e54423ff9222460"
+  },
+  "definitions": {
+    "sbrt/metric.py": {
+      "age_row": "4a41bba72940b131b5d176ac7f26701bb792f12bc90f69db97c8676746b6f62b",
+      "aggregate": "8b6bf7521a8f2176c739173a5eb723275c3c3edcba9a6b7b37170a964770deb3",
+      "ts_auc": "ddfe8ddf0ca7418ddc5dfd373cf2790319cb87ce50132de90f095d279d1eb4ea",
+      "bucket_summary": "f8f684c25485174925f1e78ede04cd9b7df5a9dd31eb66ee16617577cc1b0daa"
+    },
+    "sbrt/detectors.py": {
+      "OfficialEWMABaseline": "9f70807be42ebbfa1da18af18802aabf83a2bb099ecbfd2090426d3b44e55d35",
+      "EvidenceDetector": "fcd7f7a32df079e918ad2798ba70dd7696dc4aeb861561fda1816a5db9489eff",
+      "Constant": "6885aacc38d0862f721e737653a83969465cd953bbe1d1c61f53c6e39af7ae9a",
+      "AgeOnly": "17b6f65b8c8d702c4043f23c91c3229daf9eaede820d3c674a0ac675c84ca0b8",
+      "make_detector": "b3eef056cb62f2fb7006c8c6a18cb1e7dfe218c7e0c87a5b9f01cf65870abab1",
+      "infer": "fc11e4c73427d69ad897f39409bd52f03e8873c165056db5110f4633129ce94e"
+    },
+    "sbrt/profile.py": {
+      "write_json": "3970c129524ec925e72eeb53dda1029bbf9f14c576c3fae030b6767192085a15",
+      "summarize": "bd046686bedcb1ccaf655daed01c346782e0fe91ff458352d85bc02d297e352b",
+      "distribution_table": "ab699c33bd01f6e5bc73e525537600abf525b6c83a076d3e8f7ad494821ea599",
+      "corr": "eae150f2caab87ae34ae9e363272b8b270a4450be78b2a9b27f03074ef07d275",
+      "stats": "51a2447d068a370179d2e478f3c2f761d7e19293fdfefb84d4a0734236aa511b",
+      "fit_ar": "644616ea0f78ec519ba9868abf5940356fbaba1d0ad9e72d113601fe9a9174de",
+      "residuals": "651231aaafb9e32e942601c3b9588decdfd221cc79470feccf871c0b5ada142a",
+      "whitening": "11e77dcb4ef3fdf63435db9a6460db07d8bf35548a271cfd0b136d219e579b00",
+      "signature": "8b2ff72133f95d64ef50068f365d3f146275c49205b2466b40b2e235030c1ee3",
+      "canonical": "0af23846b5601a7890233771cb382c8ce79dd373c33b9ced1c02b3e2f76a02f2",
+      "Union": "03cd3161a765f211c6d8ad5cce3f975308fc0708c852d3249126f291f7fef771",
+      "run_profile": "aaa82a55c1dfeb43ae499b4bd70410fe6b745c0211b6ce1e5771e9927879fc20"
+    },
+    "sbrt/replay.py": {
+      "ProtocolError": "b9f56b10af60e0b0e9b7cf8b3e46f04c4df0463e1c6e1307730dbd4df7d1f9da",
+      "GuardedOnline": "dd42e4f849ac561100e6df03dbc91d98684ea3f4658f9557a8c145ff3eae73ba",
+      "replay": "2575ac1ef853e51172f957bea9e6ceba11f83acb35d5eba01d71ab123ebf61a6"
+    },
+    "sbrt/backtest.py": {
+      "process_peak_rss": "c2b60764e2025ec56b5aaf5a8852ac18301df3dedebdff25ced8e790abddced5",
+      "e00": "85c02ce3cfa769b38ee460b5518e3e7fdf013076ce6110d8b6387a3454825255",
+      "fixed_folds": "b763669f9126da5437a57098814138b1eb574b59d71b67a95d786dcc5eb17a52",
+      "score_file": "bf02026d53e66c894557cc88103dfe0e65477b00637664db9f42faf24e512c5c",
+      "run_backtest": "f080b8c4988b4777882e5412448c322a54901c01986fc7a3071d6aa32431a52b"
+    },
+    "sbrt/data.py": {
+      "Series": "a01a83220d400a3d2f4265657714edbc6bf3f4643dc4d3437c6d3136c72a9d41",
+      "sha256": "ab3d06ab48f22cb8c30043bb2961945a38a03ec6591bdda189f344ec12daad97",
+      "qident": "cffdface0ee236d10e82c502c8400c764d4f536f5c68cd590318080e177a92ee",
+      "connect": "97476f7c22a4fc3338f85745ade32df7ef48922b213492ce1462c4991520e1f5",
+      "prepare": "978bca38f1c4240efbe255a6f340a611f908f39936e02e984a08ae58f031ce72",
+      "iter_frames": "70eb5eb4067018db0ef5352c1ec1b08963bb7f2c6f544a1e90e0a19191f72327",
+      "iter_series": "deaf0061a30af2cc72bed8a463a5048974f3d63d29168097f71f38a3dbfb7de2",
+      "get_history": "f14b1dc171b6f853802dbe9ba3806143269475e33149b871d253ea35ccdee96a",
+      "get_values": "e0051453861a6a659ab5a5865cf1a28993dba8bcf1512572855dc4357c9504db"
+    },
+    "sbrt/cli.py": {
+      "make_synthetic": "95e9e992570a8cebfa9b996721fc2fa9357ecfc79d55cc580af2f1cad4087510",
+      "main": "df39e7df93d7e92821fb1299c83ae175b8c869e9c47585059b41ed250291b507"
+    },
+    "tests/test_foundation.py": {
+      "official_quickstarter_extract": "6a8d6f36917f169d4da6ac6f0c6e27aef88b7a28c7c23b933928485cb49a29a8",
+      "fixture": "797a208e198271e38a95dbd8c6b1534b9f59f40d6d7acca4be0c796fe80dc916",
+      "predict": "7e2a6a8cbd1c04b25ce10361c11f6b6f3e889491419a897c63856cf149841b1b",
+      "EWMARegression": "e03812093178071f4cbc5f37b271740081c200a1f6d80217bb9ca4f4d5ee9b0d",
+      "MetricTests": "c254847e977edda8750a660a728b430c7a433d9d11114bf5fa4fbb49486235e1",
+      "CausalityTests": "0203dd95d55cb87a5432299eefc0d5a398dcdd33ee9e9b6d438e6943df061f53",
+      "ParquetIntegration": "59a3c983bdfb3161c27ec073860868cc657f0989589831621ee8d091255d0e89"
+    }
+  },
+  "tests_before": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 19,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 9.322
+  },
+  "git_head": "b0014f6",
+  "git_tags": [],
+  "foundation_files_untracked": true
+}

@@ -1,0 +1,73 @@
+{
+  "counts": {
+    "series": 10000,
+    "total_observations": 35036464,
+    "historical_observations": 29999947,
+    "online_observations": 5036517,
+    "nonfinite_observations": 0,
+    "nonmonotone_time_series": 0,
+    "empty_historical": 0,
+    "empty_online": 0,
+    "no_break": 5033,
+    "early": 1753,
+    "break_age_65_128": 760,
+    "repeated_block_positions_checked": 147644,
+    "late": 1622,
+    "break_age_513_None": 722,
+    "middle": 1592,
+    "break_age_1_8": 191,
+    "break_age_129_256": 1099,
+    "break_age_257_512": 1194,
+    "break_age_33_64": 517,
+    "break_age_9_16": 161,
+    "break_age_17_32": 323,
+    "break": 4967
+  },
+  "no_break_fraction": 0.5033,
+  "early_middle_late_break_proportions": {
+    "early": 0.3529293336017717,
+    "middle": 0.3205154016508959,
+    "late": 0.3265552647473324
+  },
+  "total_pair_weight": 5281702355,
+  "cumulative_metric_weight_age_milestones": {
+    "0.25": 168,
+    "0.5": 294,
+    "0.75": 451,
+    "0.9": 600,
+    "0.95": 683
+  },
+  "sources": {
+    "X": {
+      "sha256": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+      "bytes": 218514418,
+      "schema": "value: float\nperiod: int64\nid: int64\ntime: int64\n-- schema metadata --\npandas: '{\"index_columns\": [\"id\", \"time\"], \"column_indexes\": [{\"name\": nu' + 650"
+    },
+    "y": {
+      "sha256": "fff57b37cd0083040b46c5ec3e4d3c1da009ef18b1b1bc43096131c77c25e916",
+      "bytes": 8356193,
+      "schema": "target: int64\nid: int64\ntime: int64\n-- schema metadata --\npandas: '{\"index_columns\": [\"id\", \"time\"], \"column_indexes\": [{\"name\": nu' + 539"
+    },
+    "index": {
+      "sha256": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07",
+      "bytes": 100183,
+      "schema": "tau_index: int64\ntau: int64\nid: int64\n-- schema metadata --\npandas: '{\"index_columns\": [\"id\"], \"column_indexes\": [{\"name\": null, \"fie' + 535"
+    }
+  },
+  "wall_seconds": 123.53848020001897,
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "definitions": {
+    "age": "one-based online position",
+    "std": "ddof=1",
+    "MAD": "unscaled median absolute deviation",
+    "skew_kurtosis": "moment estimates; excess kurtosis; >=8 finite points",
+    "early_middle_late": "thirds of first-positive one-based age / observed online length",
+    "tail_thresholds": "reference historical 1% and 99% quantiles",
+    "matched_window": "min(128, available pre, available post), >=8",
+    "AR": "ridge=1, unpenalized intercept, training-only standardization, historical 70/30 holdout"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "fold_settings": {
+    "seed": 20260918,
+    "n_splits": 5,
+    "grouped": false,
+    "groups_sha256": null,
+    "sklearn": "1.8.0"
+  },
+  "profile_status": {
+    "label_alignment": "pass",
+    "counts": {
+      "series": 10000,
+      "total_observations": 35036464,
+      "historical_observations": 29999947,
+      "online_observations": 5036517,
+      "nonfinite_observations": 0,
+      "nonmonotone_time_series": 0,
+      "empty_historical": 0,
+      "empty_online": 0,
+      "no_break": 5033,
+      "early": 1753,
+      "break_age_65_128": 760,
+      "repeated_block_positions_checked": 147644,
+      "late": 1622,
+      "break_age_513_None": 722,
+      "middle": 1592,
+      "break_age_1_8": 191,
+      "break_age_129_256": 1099,
+      "break_age_257_512": 1194,
+      "break_age_33_64": 517,
+      "break_age_9_16": 161,
+      "break_age_17_32": 323,
+      "break": 4967
+    },
+    "unresolved_repeated_block_pairs": 0,
+    "source_sha256": {
+      "X": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+      "y": "fff57b37cd0083040b46c5ec3e4d3c1da009ef18b1b1bc43096131c77c25e916",
+      "index": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+    }
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0",
+    "pyarrow": "25.0.1"
+  },
+  "official_ewma": {
+    "alpha": 0.05,
+    "kappa": 3.0,
+    "scale_floor": 1e-08,
+    "ddof": 1
+  },
+  "statistical_detectors": {
+    "cusum_k": 0.5,
+    "page_hinkley_delta": 0.05,
+    "normalization_scale_floor": 1e-08,
+    "variance_log_floor": 1e-12,
+    "evidence_mapping": "q/(1+q)"
+  },
+  "limitations": [
+    "No uncertainty interval yet; fold scores are diagnostics, not five independent repetitions.",
+    "Peak RSS is cumulative for this process; run detectors separately for isolated peaks.",
+    "Labels and final lengths appear only in evaluator outputs, never detector inputs."
+  ]
+}
